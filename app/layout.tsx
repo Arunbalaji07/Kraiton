@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
@@ -37,6 +38,10 @@ export default function RootLayout({
             disableTransitionOnChange
             storageKey="theme"
           >
+            <Toaster
+              richColors
+              position={`bottom-center`}
+            />
             {children}
           </ThemeProvider>
         </ConvexClientProvider>

@@ -102,7 +102,7 @@ body,
     --secondary-foreground: oklch(0.985 0 0);
 
     --muted: oklch(0.449 0.058 278.9); /* surface-a40 #554e72 */
-    --muted-foreground: oklch(0.708 0 0);
+    --muted-foreground: oklch(0.994 0 89.876);
 
     --accent: oklch(0.540 0.049 276.5); /* surface-a50 #706988 */
     --accent-foreground: oklch(0.985 0 0);

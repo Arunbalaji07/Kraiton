@@ -1,0 +1,26 @@
+"use client"
+
+import { useEffect, useState } from "react";
+
+import SettingsModal from "@/components/modals/settings-modal"; "@/components/modals/settings-modal"
+
+const ModalProvider = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsMounted(true);
+  }, []);
+
+  if(!isMounted) {
+    return null;
+  }
+
+  return (
+    <>
+      <SettingsModal />
+    </>
+  );
+};
+
+export default ModalProvider;

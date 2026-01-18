@@ -2,24 +2,28 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import {
   ChevronsLeft,
   MenuIcon,
+  Plus,
   PlusCircle,
   Search,
   Settings,
+  Trash,
 } from "lucide-react";
 import { useMediaQuery } from "usehooks-ts";
 import { usePathname } from "next/navigation";
-import { useMutation, useQuery } from "convex/react";
+import { useMutation } from "convex/react";
 import { toast } from "sonner";
 
 import { cn } from "@/lib/utils";
 import { api } from "@/convex/_generated/api";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import Item from "@/components/main/item";
 import UserItem from "@/components/main/user-item";
+import DocumentList from "@/components/main/document-list";
+import TrashBox from "@/components/main/trash-box";
 
 const Navigation = () => {
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px");
-  const documents = useQuery(api.document.get);
   const create = useMutation(api.document.create);
 
   const isResizingRef = useRef(false);
@@ -140,9 +144,16 @@ const Navigation = () => {
           <Item onClick={handleCreate} label="New page" icon={PlusCircle} />
         </div>
         <div className={`mt-4`}>
-          {documents?.map((document) => (
-            <p key={document._id}>{document.title}</p>
-          ))}
+          <DocumentList />
+          <Item label="Add a page" onClick={handleCreate} icon={Plus} />
+          <Popover>
+            <PopoverTrigger className={`w-full mt-4`}>
+              <Item label="Trash" icon={Trash} />
+            </PopoverTrigger>
+            <PopoverContent side={isMobile ? "bottom" : "right"}>
+              <TrashBox />
+            </PopoverContent>
+          </Popover>
         </div>
         <div
           onMouseDown={handleMouseDown}

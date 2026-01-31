@@ -136,6 +136,38 @@ body,
     --sidebar-ring: oklch(0.829 0.194 148.6);
 }
 
+.dark .EmojiPickerReact {
+    /* === Base surfaces === */
+    --epr-bg-color: var(--popover);
+    --epr-category-label-bg-color: var(--popover);
+
+    /* === Text === */
+    --epr-text-color: var(--foreground);
+    --epr-search-text-color: var(--foreground);
+
+    /* === Hover / Active states === */
+    --epr-hover-bg-color: var(--secondary);
+    --epr-emoji-hover-color: var(--secondary);
+
+    /* === Borders & inputs === */
+    --epr-search-border-color: var(--border);
+    --epr-picker-border-color: var(--border);
+
+    /* === Accent / focus === */
+    --epr-focus-bg-color: var(--accent);
+    --epr-highlight-color: var(--primary);
+
+    /* === Scrollbar === */
+    --epr-scrollbar-thumb-bg-color: var(--muted);
+
+    /* Search input */
+    --epr-search-input-bg-color: var(--card);
+    --epr-search-placeholder-color: var(--muted-foreground);
+    --epr-search-input-bg-color-active: var(--background)
+}
+
+
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

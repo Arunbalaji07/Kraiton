@@ -3,7 +3,7 @@ import { AuthConfig } from "convex/server";
 export default {
   providers: [
     {
-      domain: "https://good-sponge-60.clerk.accounts.dev",
+      domain: "https://guiding-swift-41.clerk.accounts.dev",
       applicationID: "convex",
     },
   ],

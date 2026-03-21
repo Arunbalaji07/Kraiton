@@ -166,7 +166,78 @@ body,
     --epr-search-input-bg-color-active: var(--background)
 }
 
+/* Dark theme container only */
+.dark .bn-container .bn-editor{
+    background-color: var(--card) !important; /* choose the color you want */
+    color: var(--foreground) !important;
+}
 
+/* Dark theme for Block Note */
+/*.dark .bn-container {*/
+/*    background-color: var(--background) !important;*/
+/*    color: var(--foreground) !important;*/
+/*}*/
+
+/*!* Editor content area *!*/
+/*.dark .bn-editor,*/
+/*.dark .bn-editor * {*/
+/*    background-color: var(--card) !important;*/
+/*    color: var(--card-foreground) !important;*/
+/*    border-color: var(--border) !important;*/
+/*}*/
+
+/*!* Placeholder text *!*/
+/*.dark .bn-editor .placeholder-selector-a9daeffe-aa2f-4780-9b5f-f43cd2c0f36d::before {*/
+/*    color: var(--muted-foreground) !important;*/
+/*}*/
+
+/*!* Individual blocks *!*/
+/*.dark .bn-block {*/
+/*    background-color: var(--card) !important;*/
+/*    color: var(--card-foreground) !important;*/
+/*    border-color: var(--border) !important;*/
+/*}*/
+
+/*!* Toolbar / floating menus *!*/
+/*.dark .bn-side-menu,*/
+/*.dark .bn-button {*/
+/*    background-color: var(--popover) !important;*/
+/*    color: var(--foreground) !important;*/
+/*    border-color: var(--border) !important;*/
+/*}*/
+
+/*!* Hover & focus states for buttons *!*/
+/*.dark .bn-button:hover,*/
+/*.dark .bn-button:focus {*/
+/*    background-color: var(--secondary) !important;*/
+/*    color: var(--secondary-foreground) !important;*/
+/*}*/
+
+/*!* Scrollbar *!*/
+/*.dark .bn-editor::-webkit-scrollbar {*/
+/*    width: 8px;*/
+/*    height: 8px;*/
+/*}*/
+/*.dark .bn-editor::-webkit-scrollbar-thumb {*/
+/*    background-color: var(--muted) !important;*/
+/*    border-radius: 4px;*/
+/*}*/
+/*.dark .bn-editor::-webkit-scrollbar-track {*/
+/*    background-color: transparent !important;*/
+/*}*/
+
+/*!* Text selection *!*/
+/*.dark .bn-editor ::selection {*/
+/*    background-color: var(--primary) !important;*/
+/*    color: var(--primary-foreground) !important;*/
+/*}*/
+
+/*!* Floating menus, tooltips, popovers inside editor *!*/
+/*.dark .bn-editor [data-floating-ui-focusable] {*/
+/*    background-color: var(--popover) !important;*/
+/*    color: var(--popover-foreground) !important;*/
+/*    border-color: var(--border) !important;*/
+/*}*/
 
 @layer base {
   * {

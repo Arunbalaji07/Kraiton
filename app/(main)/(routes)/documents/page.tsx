@@ -1,15 +1,17 @@
 "use client";
 
+import {useRouter} from "next/navigation";
 import { PlusCircle } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import { useMutation } from "convex/react";
 import { toast } from "sonner";
-import Image from "next/image";
 
+import Image from "next/image";
 import { api } from "@/convex/_generated/api";
 import { Button } from "@/components/ui/button";
 
 const DocumentsPage = () => {
+  const router = useRouter();
   const { user } = useUser();
   const create = useMutation(api.document.create);
 
@@ -17,6 +19,7 @@ const DocumentsPage = () => {
     const promise = create({
       title: "Untitled"
     })
+        .then((documentId) => router.push(`/documents/${documentId}`))
 
     toast.promise(promise, {
       loading: "Creating a new note...",

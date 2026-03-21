@@ -30,7 +30,6 @@ const Editor = ({onChange, initialContent, editable}: EditorProps) => {
     }
 
     const editor: BlockNoteEditor = useCreateBlockNote({
-        editable,
         initialContent: initialContent
             ? JSON.parse(initialContent)
             : undefined,
@@ -53,6 +52,7 @@ const Editor = ({onChange, initialContent, editable}: EditorProps) => {
         <div>
             <BlockNoteView
                 editor={editor}
+                editable={editable}
                 theme={resolvedTheme === "dark" ? "dark" : "light"}
                 onChange={() => {
                     debouncedOnChange(editor.document);

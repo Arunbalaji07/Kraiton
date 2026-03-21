@@ -3,7 +3,7 @@ import { AuthConfig } from "convex/server";
 export default {
   providers: [
     {
-      domain: "https://guiding-swift-41.clerk.accounts.dev",
+      domain: process.env.NEXT_PUBLIC_CONVEX_URL!,
       applicationID: "convex",
     },
   ],
